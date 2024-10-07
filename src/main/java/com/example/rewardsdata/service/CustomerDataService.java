@@ -39,7 +39,7 @@ public class CustomerDataService {
             monthlyPoints.put(month, monthlyPoints.getOrDefault(month, 0) + points);
         }
         int totalPoints = monthlyPoints.values().stream().mapToInt(Integer::intValue).sum();
-        monthlyPoints.put("TOTAL", totalPoints);
+        monthlyPoints.put("Total Points", totalPoints);
         return monthlyPoints;
     }
 }
