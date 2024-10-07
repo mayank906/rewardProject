@@ -1,4 +1,4 @@
-package com.example.demo.repository;
+package com.example.rewardsdata.repository;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.example.demo.model.CustomerData;
+import com.example.rewardsdata.model.CustomerData;
 
 @Repository
 public interface RewardRepository extends JpaRepository<CustomerData, Long> {

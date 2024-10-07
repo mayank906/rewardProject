@@ -1,5 +1,5 @@
 
-package com.example.demo;
+package com.example.rewardsdata;
 
 import java.time.LocalDate;
 import java.util.Arrays;
@@ -8,8 +8,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.example.demo.model.CustomerData;
-import com.example.demo.repository.RewardRepository;
+import com.example.rewardsdata.model.CustomerData;
+import com.example.rewardsdata.repository.RewardRepository;
 
 @Configuration
 public class LoadDatabase {

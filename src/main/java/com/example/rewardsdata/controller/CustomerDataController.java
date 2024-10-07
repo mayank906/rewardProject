@@ -1,4 +1,4 @@
-package com.example.demo.controller;
+package com.example.rewardsdata.controller;
 
 import java.time.LocalDate;
 import java.util.Map;
@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.service.CustomerDataService;
+import com.example.rewardsdata.service.CustomerDataService;
 
 @RestController
 @RequestMapping("/api/rewards")

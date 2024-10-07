@@ -1,4 +1,4 @@
-package com.example.demo.service;
+package com.example.rewardsdata.service;
 
 import java.time.LocalDate;
 import java.util.LinkedHashMap;
@@ -8,8 +8,8 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.demo.model.CustomerData;
-import com.example.demo.repository.RewardRepository;
+import com.example.rewardsdata.model.CustomerData;
+import com.example.rewardsdata.repository.RewardRepository;
 
 @Service
 public class CustomerDataService {
