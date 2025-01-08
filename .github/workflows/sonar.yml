@@ -16,11 +16,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Set up SonarQube Scanner
-        uses: sonarsource/sonarcloud-github-action@v1
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}  # Pass token as environment variable
+      - name: Set up JDK 11 (or any other version compatible with your project)
+        uses: actions/setup-java@v2
+        with:
+          java-version: '11'
+          distribution: 'adoptopenjdk'
 
-      - name: Run SonarQube Scanner
-        run: |
-          sonar-scanner -Dsonar.host.url=http://localhost:8080  # Your SonarQube URL
+      - name: Build with Maven
+        run: mvn clean install  # This will install your dependencies and prepare the project for SonarQube analysis
+
+      - name: Run SonarQube Analysis
+        run: mvn sonar:sonar -Dsonar.host.url=http://localhost:8080 -Dsonar.login=${{ secrets.SONAR_TOKEN }}  # This will run SonarQube analysis using Maven
