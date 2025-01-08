@@ -16,12 +16,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Set up SonarQube Scanner
-        uses: sonarsource/sonarcloud-github-action@v1
-        with:
-                    SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}  # Using the SONAR_TOKEN secret
-
-
       - name: Run SonarQube Scanner
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}  # Pass token as an environment variable
         run: |
-          sonar-scanner -Dsonar.host.url=http://localhost:8080
+          sonar-scanner -Dsonar.host.url=http://localhost:8080  # Your SonarQube URL
