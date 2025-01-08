@@ -1,29 +1,29 @@
-name: SonarQube Scan
+# name: SonarQube Scan
 
-on:
-  push:
-    branches:
-      - master    # or whichever branch you want to trigger on
-  pull_request:
-    branches:
-      - master    # or whichever branch you want to trigger on
+# on:
+#   push:
+#     branches:
+#       - master    # or whichever branch you want to trigger on
+#   pull_request:
+#     branches:
+#       - master    # or whichever branch you want to trigger on
 
-jobs:
-  sonar:
-    runs-on: ubuntu-latest
+# jobs:
+#   sonar:
+#     runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+#     steps:
+#       - name: Checkout code
+#         uses: actions/checkout@v2
 
-      - name: Set up JDK 17 (Eclipse Temurin)
-        uses: actions/setup-java@v2
-        with:
-          java-version: '17'
-          distribution: 'temurin'  # Use Temurin instead of AdoptOpenJDK
+#       - name: Set up JDK 17 (Eclipse Temurin)
+#         uses: actions/setup-java@v2
+#         with:
+#           java-version: '17'
+#           distribution: 'temurin'  # Use Temurin instead of AdoptOpenJDK
 
-      - name: Build with Maven
-        run: mvn clean install  # This will install your dependencies and prepare the project for SonarQube analysis
+#       - name: Build with Maven
+#         run: mvn clean install  # This will install your dependencies and prepare the project for SonarQube analysis
 
-      - name: Run SonarQube Analysis
-        run: mvn sonar:sonar -Dsonar.host.url=http://localhost:8080 -Dsonar.login=${{ secrets.SONAR_TOKEN }}  # This will run SonarQube analysis using Maven
+#       - name: Run SonarQube Analysis
+#         run: mvn sonar:sonar -Dsonar.host.url=http://localhost:8080 -Dsonar.login=${{ secrets.SONAR_TOKEN }}  # This will run SonarQube analysis using Maven
