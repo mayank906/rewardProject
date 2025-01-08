@@ -3,10 +3,10 @@ name: SonarCloud Analysis
 on:
   push:
     branches:
-      - main
+      - master
   pull_request:
     branches:
-      - main
+      - master
 
 jobs:
   sonarcloud:
@@ -37,7 +37,7 @@ jobs:
         uses: sonarsource/sonarcloud-github-action@v1
         with:
           organization: my-org
-          projectKey: my-maven-java-project
-          projectName: My Maven Java Project
+          projectKey: company1234
+          projectName: sonarQubeTest
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
