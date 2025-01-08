@@ -3,10 +3,10 @@ name: SonarQube Scan
 on:
   push:
     branches:
-      - main   # or whichever branch you want to trigger on
+      - master    # or whichever branch you want to trigger on
   pull_request:
     branches:
-      - main   # or whichever branch you want to trigger on
+      - master    # or whichever branch you want to trigger on
 
 jobs:
   sonar:
