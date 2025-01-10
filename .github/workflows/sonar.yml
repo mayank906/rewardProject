@@ -23,7 +23,8 @@
            distribution: 'temurin'  # Use Temurin instead of AdoptOpenJDK
 
        - name: Build with Maven
-         run: mvn clean install -DskipTests # This will install your dependencies and prepare the project for SonarQube analysis
+         run: mvn clean install sonar:sonar -X
+ # This will install your dependencies and prepare the project for SonarQube analysis
 
        - name: Run SonarQube Analysis
          run: mvn sonar:sonar -Dsonar.host.url=http://localhost:8080 -Dsonar.login=${{ secrets.SONAR_TOKEN }}  # This will run SonarQube analysis using Maven
