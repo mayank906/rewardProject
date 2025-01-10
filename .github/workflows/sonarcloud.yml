@@ -29,5 +29,5 @@ jobs:
         run: mvn sonar:sonar \
           -Dsonar.host.url=https://sonarcloud.io \
           -Dsonar.organization=your-sonarcloud-organization \
-          -Dsonar.projectKey=your-sonarcloud-project-key \
+          -Dsonar.projectKey=company1234 \
           -Dsonar.login=${{ secrets.SONAR_TOKEN }}
