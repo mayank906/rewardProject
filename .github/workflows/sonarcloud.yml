@@ -1,33 +1,33 @@
-name: SonarCloud Scan
+# name: SonarCloud Scan
 
-on:
-  push:
-    branches:
-      - master  # or the branch you want to trigger on
-  pull_request:
-    branches:
-      - master  # or the branch you want to trigger on
+# on:
+#   push:
+#     branches:
+#       - master  # or the branch you want to trigger on
+#   pull_request:
+#     branches:
+#       - master  # or the branch you want to trigger on
 
-jobs:
-  sonar:
-    runs-on: ubuntu-latest
+# jobs:
+#   sonar:
+#     runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+#     steps:
+#       - name: Checkout code
+#         uses: actions/checkout@v2
 
-      - name: Set up JDK 17 (Eclipse Temurin)
-        uses: actions/setup-java@v2
-        with:
-          java-version: '17'
-          distribution: 'temurin'
+#       - name: Set up JDK 17 (Eclipse Temurin)
+#         uses: actions/setup-java@v2
+#         with:
+#           java-version: '17'
+#           distribution: 'temurin'
 
-      - name: Build with Maven
-        run: mvn clean install sonar:sonar -X
+#       - name: Build with Maven
+#         run: mvn clean install sonar:sonar -X
 
-      - name: Run SonarCloud Analysis
-        run: mvn sonar:sonar \
-          -Dsonar.host.url=https://sonarcloud.io \
-          -Dsonar.organization=your-sonarcloud-organization \
-          -Dsonar.projectKey=company1234 \
-          -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+#       - name: Run SonarCloud Analysis
+#         run: mvn sonar:sonar \
+#           -Dsonar.host.url=https://sonarcloud.io \
+#           -Dsonar.organization=your-sonarcloud-organization \
+#           -Dsonar.projectKey=company1234 \
+#           -Dsonar.login=${{ secrets.SONAR_TOKEN }}
