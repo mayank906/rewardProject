@@ -27,4 +27,5 @@
  # This will install your dependencies and prepare the project for SonarQube analysis
 
        - name: Run SonarQube Analysis
-         run: mvn sonar:sonar -Dsonar.host.url=http://localhost:8080 -Dsonar.login=${{ secrets.SONAR_TOKEN }}  # This will run SonarQube analysis using Maven
+         run: mvn sonar:sonar -Dsonar.host.url=http://localhost:8080 -Dsonar.login=${{ secrets.SONAR_TOKEN }}  
+# This will run SonarQube analysis using Maven
